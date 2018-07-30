@@ -10,7 +10,7 @@
   </head>
   <body>
 
-    <form id="js_customize-quote">My property/hotel is located in <?php echo $regions->get_region_dropdown(); ?> and has <?php echo $base->get_room_counts_dropdown(); ?> rooms. I am currently a member of the tourism association, <?php echo $base->get_tourism_associations_dropdown(); ?>, and/or using the following technology provider <?php echo $base->get_technology_providers_dropdown(); ?>.</form>
+    <form id="js_customize-quote">My property/hotel is located in <?php echo $regions->get_region_dropdown(); ?> and has <?php echo $base->get_room_counts_dropdown(); ?> rooms. I am also working with one of the following TrustYou’s partners: <?php echo $base->get_tourism_associations_dropdown(); ?>.</form>
 
     <?php foreach ($products->product_list as $index => $product): ?>
       <div class="row" id="js_product-id--<?php echo $product->id ?>" <?php echo $product->product_child ? 'data-child="'.$product->product_child.'"' : '' ?>>
@@ -30,8 +30,8 @@
       <div class="total__text">
         Monthly usage fee
       </div>
-      <div class="total__amount">
-        
+      <div class="total__amount" id="js_monthly-usage-fee">
+
       </div>
     </div>
 

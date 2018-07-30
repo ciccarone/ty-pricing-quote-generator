@@ -23,11 +23,13 @@
       $this->submitted_region = $this->form_data['region'];
       $this->submitted_room_count = $this->form_data['room_count'];
       $this->submitted_tourism_association = $this->form_data['tourism_association'];
-      $this->submitted_technology_provider = $this->form_data['technology_provider'];
+      // $this->submitted_technology_provider = $this->form_data['technology_provider'];
 
       $pricing = ORM::for_table('prices')->where('room_count_range', $this->submitted_room_count)->where('region_id', $this->submitted_region)->find_array();
 
-      return $pricing;
+      $discount = ORM::for_table('tourism_associations')->where('id', $this->submitted_tourism_association)->find_array();
+
+      return array_merge($discount, $pricing);
     }
 
     private function set_products()
