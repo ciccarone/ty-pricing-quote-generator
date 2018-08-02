@@ -45,6 +45,7 @@
       $html = '';
       $html .= '<select name="tourism_association" id="tourism_association">';
       $html .= '<label for="tourism_association">Tourism Association</label>';
+      $html .= '<option value="">Please Select</option>';
       foreach ($this->tourism_association_list as $index => $tourism_association_name) {
         $html .= '<option value="'.$tourism_association_name->id.'">'.$tourism_association_name->tourism_association_name.'</option>';
       }
